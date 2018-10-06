@@ -1,0 +1,22 @@
+﻿@* (c) California State University, Fullerton *@
+
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Out</title>
+</head>
+<body>
+	<iframe src="/Shibboleth.sso/Logout" class="hidden" style="width:0; height:0; display:none; visibility:hidden;"></iframe>
+	<iframe src="https://shibboleth.fullerton.edu/idp/profile/Logout" class="hidden" style="width:0; height:0; display:none; visibility:hidden;"></iframe>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			window.location = 'https://' + location.host + '@HttpRuntime.AppDomainAppVirtualPath';
+		});
+	</script>
+</body>
+</html>

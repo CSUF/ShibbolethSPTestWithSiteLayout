@@ -1,0 +1,55 @@
+﻿@* (c) California State University, Fullerton *@
+
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Main Page";
+}
+
+<script type="text/javascript">
+		if (!Modernizr.crypto || !Modernizr.flexbox || !Modernizr.video) {
+			window.location = 'https://' + location.host + location.pathname + '/browser/incompatible'
+		}
+</script>
+
+<div>
+	<div class="page-header">
+		<h1>Information Page for Signed-In Users</h1>
+	</div>
+	<h2>Important Request.ServerVariables</h2>
+	<table class="table-striped table-bordered table-responsive table-hover">
+		<thead>
+			<tr>
+				<th>Request.ServerVariables</th>
+				<th>Value</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr><td>REMOTE_ADDR:</td><td>@Request.ServerVariables["REMOTE_ADDR"]</td></tr>
+			<tr><td>HTTP_REMOTEUSER:</td><td>@Request.ServerVariables["HTTP_REMOTEUSER"]</td></tr>
+			<tr><td>Your EPPN:</td><td>@Request.ServerVariables["HTTP_EPPN"]</td></tr>
+			<tr><td>Your Affiliation:</td><td>@Request.ServerVariables["HTTP_AFFILIATION"]</td></tr>
+			<tr><td>Your Nickname:</td><td>@Request.ServerVariables["HTTP_NICKNAME"]</td></tr>
+		</tbody>
+	</table>
+	<h2>All Request.ServerVariables</h2>
+	<table class="table-striped table-bordered table-responsive table-hover">
+		<thead>
+			<tr>
+				<th>Request.ServerVariables</th>
+				<th>Value</th>
+			</tr>
+		</thead>
+		<tbody>
+			@{
+				foreach (string itemSV in Request.ServerVariables)
+				{
+					<tr>
+						<td>@itemSV</td>
+						<td>@Request.ServerVariables[itemSV]</td>
+					</tr>
+				}
+			}
+		</tbody>
+	</table>
+</div>
+<div class="clear"></div>

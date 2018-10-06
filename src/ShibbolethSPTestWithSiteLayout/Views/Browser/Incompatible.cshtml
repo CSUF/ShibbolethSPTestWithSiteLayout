@@ -1,0 +1,32 @@
+﻿@* (c) California State University, Fullerton *@
+
+<script type="text/javascript">
+		if (Modernizr.crypto && Modernizr.flexbox && Modernizr.video) {
+			window.location = 'https://' + location.host + '@HttpRuntime.AppDomainAppVirtualPath';
+		}
+</script>
+
+
+@{
+	ViewBag.Title = "Incompatible Browser";
+}
+
+<h2 style="margin: 20px auto 20px auto; text-align: center;">Outdated Browser or Obsolete Browser Is Not Supported </h2>
+
+<div class="center-block">
+	<div class="row">
+		<div style="margin-bottom: 20px;">
+			Your browser is not supported for CSUF Shibboleth test with CSUF Site Layout with Bootstrap and LESS. You are using an <span class="text-danger">outdated</span> and <span class="text-danger">obsolete</span>
+			browser that is no longer supported.
+		</div>
+		<div>
+			Please use a <span class="text-success">modern</span> browser when using this web application.
+			The example of modern browsers are:
+		</div>
+		<ul>
+			<li style="margin-left: 20px; list-style-type: disc;"><a target="_blank" href="http://www.google.com/chrome">Google Chrome</a></li>
+			<li style="margin-left: 20px; list-style-type: disc;"><a target="_blank" href="http://www.mozilla.org/en-US/products/download.html">Mozilla Firefox</a></li>
+			<li style="margin-left: 20px; list-style-type: disc;"><a target="_blank" href="http://windows.microsoft.com/en-us/windows/microsoft-edge">Microsoft Edge</a></li>
+		</ul>
+	</div>
+</div>
